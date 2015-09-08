@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="es" ng-app="apesol">
+    <head>
+        <meta charset="utf-8">
+        <title>Curso de AngularJS</title>
+        <script src="js/lib/angular/angular.min.js"></script>
+        <!-- Usamos app.js para crear los ejemplos de controladores -->
+        <script src="4_app.js"></script>
+    </head>
+    <body>
+      <!-- Ejemplo controlador 1 -->
+      <div ng-controller="registroController">
+        <form>
+          <fieldset>
+            <input type="text" ng-model="alumno" />
+          </fieldset>
+        </form>
+        <p>
+          El alumno ingresado se llama:
+          <span ng-bind="alumno"></span>
+        </p>
+      </div>
+      <!-- Ejemplo controlador 2 -->
+      <div ng-controller="otroRegistroController">
+        <form>
+          <fieldset>
+            <input type="text" ng-model="alumno" />
+          </fieldset>
+        </form>
+        <p>
+          El alumno ingresado se llama:
+          <span ng-bind="alumno"></span>
+        </p>
+      </div>
+    </body>
+</html>

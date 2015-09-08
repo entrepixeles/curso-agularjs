@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="es" ng-app="apesol">
+    <head>
+        <meta charset="utf-8">
+        <title>Curso de AngularJS</title>
+        <script src="js/lib/angular/angular.min.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body>
+      <div>
+        <!-- Operaciones aritmeticas -->
+        <p>8 * 10 = {{8*10}}</p>
+        <!-- Currency - Moneda -->
+        <p>{{ 124 | currency }}</p> <!-- Transforma a la moneda dolar -->
+        <p>{{ 124 | currency:"USD$ " }}</p>
+        <p>{{ 124 | currency:".S/ " }}</p>
+        <p>{{ 124 | currency:".S/ ":4 }}</p><!-- Con 4 decimales -->
+        <!-- Textos -->
+        <p>{{ 'HOLA MUNDO' | lowercase }}</p>
+        <p>{{ 'hola Mundo' | uppercase }}</p>
+      </div>
+    </body>
+</html>

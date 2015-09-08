@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="es" ng-app="apesol">
+    <head>
+        <meta charset="utf-8">
+        <title>Curso de AngularJS</title>
+        <script src="js/lib/angular/angular.min.js"></script>
+        <script src="app.js"></script>
+    </head>
+    <body>
+      <form>
+        <fieldset>
+          <input type="text" ng-model="alumno" />
+        </fieldset>
+      </form>
+      <p>
+        El alumno ingresado se llama:
+        <span ng-bind="alumno"></span>
+      </p>
+
+      <!-- Otro Ejemlo con ng-if -->
+      <p>Si el alumno se llama <strong>Juan</strong> se muestra:</p>
+      <p ng-if="alumno === 'Juan' || alumno === 'juan'">
+        <span ng-bind="alumno"></span>
+      </p>
+
+      <!-- Otro Ejemlo con ng-show , ng-hide -->
+      <hr />
+      <form>
+        <fieldset>
+          <input type="text" ng-model="alumnoNuevo" />
+          <input type="checkbox" ng-model="esNuevo" />
+        </fieldset>
+      </form>
+      <p ng-show="esNuevo">
+        El alumno ingresado es nuevo!
+      </p>
+      <p ng-hide="esNuevo">
+        Revisa si el alumno es nuevo.
+      </p>
+
+      <!-- ng-repeat -->
+      <!-- ng-init = Permite inicializar un valor dentro de un repear -->
+      <hr />
+      <ul ng-init="alumnosTodos = ['Juan', 'Raul', 'Pedro', 'Samuel', 'Jose', 'Arturo', 'Zet']">
+        <li ng-repeat="persona in alumnosTodos">
+          {{$index}} - {{persona}}
+        </li>
+      </ul>
+
+      <!-- Haciendo mas complejo el ng-repeat -->
+      <ul ng-init="alumnosTodos = ['Juan', 'Raul', 'Pedro', 'Samuel', 'Jose', 'Arturo', 'Zet']">
+        <li ng-repeat="persona in alumnosTodos">
+          <div ng-if="persona === 'Pedro'">{{$index}} - {{persona}} <strong>Es el mejor alumno de la clase.</strong></div>
+          <div ng-if="persona != 'Pedro'">{{$index}} - {{persona}}</div>
+        </li>
+      </ul>
+
+      <!-- $first y $last -->
+      <ul ng-init="alumnosTodos = ['Juan', 'Raul', 'Pedro', 'Samuel', 'Jose', 'Arturo', 'Zet']">
+        <li ng-repeat="persona in alumnosTodos">
+          <div>
+            {{$index}} - {{persona}}
+            <strong ng-if="$first">Es el primero de la clase.</strong>
+            <strong ng-if="$last">Es el ultimo de la clase.</strong>
+          </div>
+        </li>
+      </ul>
+
+      <!-- orderBy ascendente -->
+      <ul ng-init="alumnosTodos = ['Juan', 'Raul', 'Pedro', 'Samuel', 'Jose', 'Arturo', 'Zet']">
+        <li ng-repeat="persona in alumnosTodos | orderBy">
+            {{$index}} - {{persona}}
+        </li>
+      </ul>
+
+      <!-- | Filter Busca por modelo -->
+      <form>
+        <fieldset>
+          <input type="text" ng-model="alumnoABuscar" />
+        </fieldset>
+      </form>
+      <ul ng-init="alumnosTodos = ['Juan', 'Raul', 'Pedro', 'Samuel', 'Jose', 'Arturo', 'Zet']">
+        <li ng-repeat="persona in alumnosTodos | filter:alumnoABuscar">
+            {{$index}} - {{persona}}
+        </li>
+      </ul>
+
+    </body>
+</html>

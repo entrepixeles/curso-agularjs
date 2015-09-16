@@ -1,0 +1,42 @@
+<h2>{{horarios.titulo}}</h2>
+
+<!-- Ejemplo Directiva Basica -->
+<hola-mundo></hola-mundo>
+<!--div hola-mundo></div-->
+<!--div class="hola-mundo"></div-->
+
+<hr/>
+
+<!-- Ejemplo Directiva Scope heredado -->
+<form>
+  <div class="form-group">
+    <label >Nombre:</label>
+    <input type="text" ng-model="nombre" class="form-control" placeholder="Nombre">
+  </div>
+</form>
+<hola></hola>
+
+<!-- Ejemplo Directiva Scope Asignado -->
+<form>
+  <div class="form-group">
+    <label >Nombre:</label>
+    <input type="text" ng-model="nombre2" class="form-control" placeholder="Nombre" />
+  </div>
+</form>
+<hola2 a-quien="nombre2" que-color="{{color}}"></hola2>
+<button type="button" class="btn" ng-click="cambioColorAzul($event)">Cambio a color azul</button>
+<button type="button" class="btn" ng-click="cambioColorRojo($event)">Cambio a color rojo</button>
+<button type="button" class="btn" ng-click="cambioColorAnaranjado($event)">Cambio a color anaranjado</button>
+
+<hr/>
+<!-- Ejemplo Directiva Carga video Youtube -->
+<form>
+  <div class="form-group">
+    <label >Id de video youtube:</label>
+    <input type="text" ng-model="idVideo" class="form-control" placeholder="Id Video Youtube" />
+    <button type="button" class="btn" ng-click="cargarVideo($event)">Cargar Video Youtube</button>
+  </div>
+</form>
+
+<h3>Directive Carga Video Youtube</h3>
+<youtube id-video="{{youtubeIdVideo}}"></youtube>

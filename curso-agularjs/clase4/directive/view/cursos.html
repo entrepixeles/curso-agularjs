@@ -1,0 +1,19 @@
+<h2>{{cursos.titulo}}</h2>
+
+<!-- Ejemplo de parametros -->
+<div ng-if="cursos.nombre" class="alert alert-success" role="alert">
+  <h3>{{cursos.nombre}}</h3>
+</div>
+
+<!-- Ejemplo de Fabrica -->
+<h4>Alumnos registrados:</h4>
+<ul>
+  <li ng-repeat="alumno in alumnos">
+    {{alumno.nombre}} {{alumno.apellido}} <input type="checkbox" ng-model="esCorrecto$index">
+    {{ esCorrecto$index | check }} -
+    <!-- Devuelve Cantidad de caracteres - Nombre -->
+    {{ alumno.nombre | charcount }} Car. del nombre -
+    <!-- Devuelve Cantidad de caracteres - Apellido -->
+    {{ alumno.apellido | charcount }} Car. del apellido 
+  </li>
+</ul>

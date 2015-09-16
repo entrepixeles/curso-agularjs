@@ -1,0 +1,43 @@
+<form class="well">
+    <h2>Formulario de ingreso de datos</h2>
+    <div class="form-group">
+    <label>Ingresa Nombre</label>
+    <input ng-model="alumno.nombre" class="form-control" placeholder="Nombre">
+    </div>
+    <div class="form-group">
+    <label>Ingresa Apellido</label>
+    <input ng-model="alumno.apellido" class="form-control" placeholder="Apellido">
+    </div>
+    <!-- Boton Agrega -->
+    <button ng-show="esAgregar" class="btn btn-primary" type="button" ng-click="agregarAlumno($event)">Agregar alumno</button>
+    <!-- Boton Actualiza -->
+    <button ng-show="!esAgregar" class="btn btn-danger" type="button" ng-click="actualizarAlumno($event)">Actualizar alumno</button>
+</form>
+<p>
+  El alumno ingresado se llama:
+  <span ng-bind="alumno.nombre"></span> <span ng-bind="alumno.apellido"></span>
+</p>
+<hr/>
+
+<h3>Listado de Alumnos ingresado:</h3>
+<table class="table table-condensed">
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Nombre</th>
+        <th>Apellido</th>
+        <th>Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="persona in alumnos">
+        <th>{{$index + 1}}</th>
+        <th>{{persona.nombre}}</th>
+        <th>{{persona.apellido}}</th>
+        <th>
+          <button class="btn btn-default" type="button" ng-click="eliminarAlumno($event, $index)">Eliminar</button>
+          <button class="btn btn-default" type="button" ng-click="editarAlumno($event, $index, persona)">Editar</button>
+        </th>
+      </tr>
+    </tbody>
+</table>

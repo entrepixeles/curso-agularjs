@@ -1,0 +1,45 @@
+<h2 id="top">{{cursos.titulo}}</h2>
+
+<!-- Ejemplo de parametros -->
+<div ng-if="cursos.nombre" class="alert alert-success" role="alert">
+  <h3>{{cursos.nombre}}</h3>
+</div>
+
+<!-- Ejemplo de Fabrica -->
+<h4>Alumnos registrados:</h4>
+<ul>
+  <li ng-repeat="alumno in alumnos">
+    {{alumno.nombre}} {{alumno.apellido}}
+  </li>
+</ul>
+
+<button type="button" ng-click="irAScroll($event, 'bottom')" class="btn btn-danger">Ir abajo</button>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<h2 id="bottom">Estamos abajo</h2>
+<button type="button" ng-click="irAScroll($event, 'arriba')" class="btn btn-danger">Ir arriba</button>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es" ng-app="apesol">
+    <head>
+        <meta charset="utf-8">
+        <title>Curso de AngularJS</title>
+        <!-- Anadimos CSS bootstrap/3.3.5 -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+        <!--
+        0. Vamos crear un factory
+        1.- Creamos una carpeta llamada factory
+        -->
+
+    </head>
+    <body>
+        <div class="container">
+            <h1 class="text-center">Open university</h1>
+            <hr />
+            <!-- Menu de navegacion -->
+            <ul class="nav nav-pills">
+                <li ng-class="{'active':classActive==='registro'}"><a href="#/registro">Registro</a></li>
+                <li ng-class="{'active':classActive==='cursos'}"><a href="#/cursos">Cursos</a></li>
+                <li ng-class="{'active':classActive==='horarios'}"><a href="#/horarios">Horarios</a></li>
+            </ul>
+            <hr />
+            <div ng-view></div>
+         </div>
+         <!-- Usamos app.js para crear los ejemplos de controladores -->
+         <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+         <script src="../js/lib/angular/angular.min.js"></script>
+         <script src="../js/lib/angular-route/angular-route.min.js"></script>
+         <script src="app.js"></script>
+         <script src="filter/filter.js"></script>
+         <script src="factory/factory.js"></script>
+         <script src="controller/registroController.js"></script>
+         <script src="controller/cursosController.js"></script>
+         <script src="controller/horariosController.js"></script>
+    </body>
+</html>
